@@ -13,11 +13,11 @@ import com.syz.algorithm.algorithm.linkedList.model.ListNode;
 public class Chongfu {
 
     public static void main(String[] args) {
-        ListNode listNode1 = new ListNode(3);
-        ListNode listNode2 = new ListNode(3);
+        ListNode listNode1 = new ListNode(1);
+        ListNode listNode2 = new ListNode(2);
         ListNode listNode3 = new ListNode(3);
-        ListNode listNode4 = new ListNode(3);
-        ListNode listNode5 = new ListNode(3);
+        ListNode listNode4 = new ListNode(4);
+        ListNode listNode5 = new ListNode(5);
 
         listNode1.setNextNode(listNode2);
         listNode2.setNextNode(listNode3);
@@ -29,14 +29,14 @@ public class Chongfu {
 
     //   1 -> 3 -> 3 -> 3 -> null
     public static ListNode fanzhuan(ListNode listNode1) {
-        ListNode head=new ListNode(0);
-        head.nextNode=listNode1;
-        ListNode temp=head;
-        while (null != temp.nextNode){
-            if(null != temp.nextNode.nextNode && temp.nextNode.data==temp.nextNode.nextNode.data){
-                temp.nextNode=temp.nextNode.nextNode;
-            }else {
-                temp=temp.nextNode;
+        ListNode head = new ListNode(0);
+        head.nextNode = listNode1;
+        ListNode temp = head;
+        while (null != temp.nextNode) {
+            if (null != temp.nextNode.nextNode && temp.nextNode.data == temp.nextNode.nextNode.data) {
+                temp.nextNode = temp.nextNode.nextNode;
+            } else {
+                temp = temp.nextNode;
             }
         }
         return head.nextNode;
