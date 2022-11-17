@@ -26,18 +26,18 @@ public class Fanzhuan {
         exp(newListNode);
     }
 
-    // 1->2->3->4->null  1<-2<-3<-4<-null
+    //   1 -> 2 -> 3 -> 4 -> null
+    //null <- 1 <- 2 <- 3 <- 4
     public static ListNode fanzhuan(ListNode listNode1) {
-        ListNode pre = null;
-        ListNode curr = listNode1;
-        while (null != curr) {
-            ListNode next = curr.nextNode;
-            curr.nextNode=pre;
-            pre=curr;
-            curr=next;
-        }
-
-        return pre;
+         ListNode pre=null;
+         ListNode curr=listNode1;
+         while (curr!=null){
+             ListNode next=curr.nextNode;
+             curr.nextNode=pre;
+             pre = curr;
+             curr=next;
+         }
+         return pre;
     }
 
     public static void exp(ListNode listNode1) {
