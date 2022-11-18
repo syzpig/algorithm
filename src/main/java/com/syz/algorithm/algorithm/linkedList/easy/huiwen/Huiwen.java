@@ -13,60 +13,63 @@ public class Huiwen {
     public static void main(String[] args) {
         ListNode listNode1 = new ListNode(1);
         ListNode listNode2 = new ListNode(2);
-        ListNode listNode3 = new ListNode(3);
-        ListNode listNode4 = new ListNode(2);
-        ListNode listNode5 = new ListNode(1);
+        ListNode listNode3 = new ListNode(2);
+        ListNode listNode4 = new ListNode(1);
+         ListNode listNode5 = new ListNode(1);
 
         listNode1.setNextNode(listNode2);
         listNode2.setNextNode(listNode3);
         listNode3.setNextNode(listNode4);
-        listNode4.setNextNode(listNode5);
-        ListNode newListNode = fanzhuan(listNode1);
+        // listNode4.setNextNode(listNode5);
+        boolean flag= isPalindrome(listNode1);
+        System.out.printf("==="+flag);
         //  exp(newListNode);
     }
-
-    //   1 -> 2 -> 2 -> 4 -> null
-    public static ListNode fanzhuan(ListNode listNode1) {
-        //获取中点
-        ListNode fast = listNode1,slow=listNode1;
-        while (slow!=null && fast.nextNode!=null && fast.nextNode.nextNode!=null){
-            fast=fast.nextNode.nextNode;
-            slow=slow.nextNode;
+    public static boolean  isPalindrome(ListNode head) {
+        if(null == head){
+            return false;
+        }
+        //1、找出中间点
+        ListNode  fast=head,low=head;
+        while (null != low && null != fast.nextNode && null != fast.nextNode.nextNode){
+            fast= fast.nextNode.nextNode;
+            low = low.nextNode;
+        }
+        if(fast !=null){
+            low=low.nextNode;
         }
 
-        System.out.printf("flag="+slow);
-        //翻转后部分
-        ListNode slowNew = resave(slow);
-        //两个指针对比
+        //翻转后半段
+        ListNode  newLow= tranf(low);
+        //对比
         boolean flag=true;
-        while (null !=slowNew){
-            if(slowNew.data !=listNode1.data){
+        while (null != newLow ){
+            if(newLow.data != head.data){
                 flag=false;
             }
-            slowNew=slowNew.nextNode;
-            listNode1=listNode1.nextNode;
+            newLow=newLow.nextNode;
+            head=head.nextNode;
         }
-        System.out.println("===="+flag);
-        return null;
+        return flag;
     }
 
-    public static void exp(ListNode listNode1) {
-        while (null != listNode1) {
-            System.out.println("=============" + listNode1.data);
-            listNode1 = listNode1.nextNode;
+    //注意 采用地址引用会影响原始链表
+    public static void medi(ListNode fast,ListNode low) {
+        while (null != low && null != fast.nextNode && null != fast.nextNode.nextNode){
+            fast= fast.nextNode.nextNode;
+            low = low.nextNode;
         }
+
     }
 
-    public static ListNode resave(ListNode slow) {
-        ListNode head=new ListNode(0);
-        head.nextNode=slow;
+    public static ListNode tranf(ListNode low) {
         ListNode pre=null;
-        ListNode curr=head;
-        while (null != curr) {
-              ListNode next=curr.nextNode;
-              curr.nextNode=pre;
-              pre=curr;
-              curr=next;
+        ListNode curr=low;
+        while (null != curr){
+            ListNode next=curr.nextNode;
+            curr.nextNode=pre;
+            pre=curr;
+            curr=next;
         }
         return pre;
     }
