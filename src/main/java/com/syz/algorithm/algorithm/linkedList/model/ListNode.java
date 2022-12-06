@@ -15,7 +15,8 @@ public class ListNode {
      * 数据
      */
     public int data;
-
+    public ListNode() {
+    }
     public ListNode(int data) {
         this.data = data;
     }

@@ -1,7 +1,5 @@
 package com.syz.algorithm.algorithm.array.easy;
 
-import java.util.Arrays;
-
 /**
  * @Author: syz
  * @Description: 数组去重
@@ -10,28 +8,34 @@ import java.util.Arrays;
  */
 public class RemoveDuplicates {
     public static void main(String[] args) {
-        int[] arr = new int[]{1, 1, 2};
-        int i = 0;
-        int j = 0;
-        int[] newArr = new int[arr.length];
-        for (i = 0; i < arr.length; i++) {
-            if (i==arr.length-1 ) {
-                newArr[j] = arr[i];
-            } else {
-                if (arr[i] == arr[i + 1]) {
-                    continue;
-                }
-                newArr[j] = arr[i];
+        int[] arr = new int[]{1, 1, 2,2,4};
+//        int n=arr.length;
+//         int fast=1;
+//         int slow=1;
+//         while (fast<n){
+//             if(arr[fast] != arr[fast-1]){
+//                 arr[slow] = arr[fast];
+//                 ++ slow;
+//             }
+//             ++ fast;
+//         }
+        rem(arr);
+        System.out.printf("==="+arr);
+    }
+
+    public static int rem(int[] nums){
+        int n = nums.length;
+        if (n == 0) {
+            return 0;
+        }
+        int fast = 1, slow = 1;
+        while (fast < n) {
+            if (nums[fast] != nums[fast - 1]) {
+                nums[slow] = nums[fast];
+                ++slow;
             }
-            j++;
+            ++fast;
         }
-        int num=i-j;
-        int[] newArr1 = new int[j];
-        if(num>=0){
-           for (int n=0;n<j;n++){
-               newArr1[n]=newArr[n];
-           }
-        }
-        System.out.printf("==" + newArr1);
+        return slow;
     }
 }
