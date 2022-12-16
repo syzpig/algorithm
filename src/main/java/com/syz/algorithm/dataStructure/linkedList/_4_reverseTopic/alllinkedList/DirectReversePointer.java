@@ -1,10 +1,6 @@
-package com.syz.algorithm.dataStructure.linkedList.reverseTopic.alllinkedList;
+package com.syz.algorithm.dataStructure.linkedList._4_reverseTopic.alllinkedList;
 
 import com.syz.algorithm.algorithm.model.ListNode;
-
-import java.lang.ref.ReferenceQueue;
-import java.lang.ref.WeakReference;
-import java.util.List;
 
 /**
  * @Author: syz

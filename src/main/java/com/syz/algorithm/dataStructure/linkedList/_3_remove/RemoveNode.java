@@ -1,7 +1,7 @@
-package com.syz.algorithm.dataStructure.linkedList.remove;
+package com.syz.algorithm.dataStructure.linkedList._3_remove;
 
 import com.syz.algorithm.algorithm.model.Node;
-import com.syz.algorithm.dataStructure.linkedList.query.QueryNode;
+import com.syz.algorithm.dataStructure.linkedList._1_query.QueryNode;
 
 /**
  * @Author: syz

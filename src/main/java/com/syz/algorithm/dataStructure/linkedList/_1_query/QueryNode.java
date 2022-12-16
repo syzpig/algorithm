@@ -1,4 +1,4 @@
-package com.syz.algorithm.dataStructure.linkedList.query;
+package com.syz.algorithm.dataStructure.linkedList._1_query;
 
 import com.syz.algorithm.algorithm.model.Node;
 

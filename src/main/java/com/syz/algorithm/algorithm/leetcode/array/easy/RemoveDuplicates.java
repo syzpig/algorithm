@@ -1,5 +1,7 @@
 package com.syz.algorithm.algorithm.leetcode.array.easy;
 
+import java.util.Arrays;
+
 /**
  * @Author: syz
  * @Description: 数组去重
@@ -8,7 +10,7 @@ package com.syz.algorithm.algorithm.leetcode.array.easy;
  */
 public class RemoveDuplicates {
     public static void main(String[] args) {
-        int[] arr = new int[]{1, 1, 2,2,4};
+        int[] arr = new int[]{1, 2, 2,2,4};
 //        int n=arr.length;
 //         int fast=1;
 //         int slow=1;
@@ -20,7 +22,7 @@ public class RemoveDuplicates {
 //             ++ fast;
 //         }
         rem(arr);
-        System.out.printf("==="+arr);
+        System.out.printf("==="+ Arrays.toString(arr));
     }
 
     public static int rem(int[] nums){

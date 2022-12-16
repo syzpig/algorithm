@@ -1,4 +1,4 @@
-package com.syz.algorithm.dataStructure.array.insert;
+package com.syz.algorithm.dataStructure.array._2_delete;
 
 import java.util.Arrays;
 

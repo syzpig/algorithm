@@ -1,7 +1,7 @@
-package com.syz.algorithm.dataStructure.linkedList.insert;
+package com.syz.algorithm.dataStructure.linkedList._2_insert;
 
 import com.syz.algorithm.algorithm.model.Node;
-import com.syz.algorithm.dataStructure.linkedList.query.QueryNode;
+import com.syz.algorithm.dataStructure.linkedList._1_query.QueryNode;
 
 
 /**
