@@ -8,12 +8,12 @@ import java.util.LinkedList;
  * @Date: 2022/12/16 16:04
  * @Version: 1.0
  */
-public class LinkedListStack<T> {
+public class JDKListStack<T> {
     //构造栈
     private LinkedList<T> linkedList;
 
     //初始化
-    LinkedListStack(){
+    JDKListStack(){
         linkedList =new LinkedList<>();
     }
 
